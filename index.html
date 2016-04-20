@@ -1,0 +1,51 @@
+<!doctype html>
+<html>
+<head>
+<style>
+#c{
+background: none;
+height: 500px;
+width: 400px;
+}
+</style>
+</head>
+<body>
+<canvas id = "c" height="500" width="400">
+</canvas>
+<script>
+var c = document.getElementById("c");
+var canvas = c.getContext("2d");
+
+var spade = function(){
+canvas.beginPath();
+canvas.moveTo(0,200);
+canvas.lineTo(200,0);
+canvas.lineTo(400,200);
+canvas.lineTo(300,300);
+/*canvas.lineTo(200,200);
+canvas.lineTo(100,300);
+canvas.fill();
+canvas.beginPath();
+canvas.moveTo(100,400);
+canvas.lineTo(200,300);
+canvas.lineTo(300,400);
+canvas.fill();
+*/
+canvas.lineTo(205,205);
+canvas.lineTo(205,305);
+canvas.lineTo(300,400);
+canvas.lineTo(100,400);
+canvas.lineTo(195,305);
+canvas.lineTo(195,205);
+canvas.lineTo(100,300);
+canvas.fill();
+};
+
+var club = function(){
+
+};
+
+spade();
+</script>
+</body>
+</html>
