@@ -41,11 +41,18 @@ canvas.lineTo(100,300);
 canvas.fill();
 };
 
-var club = function(){
+//school assignment
 
+var club = function(){
+for(i=0;i<5;i++){
+  for(x=0;x<3;x++){
+    canvas.rect(x*100,i*100,100,100);
+    canvas.stroke();
+  }
+}
 };
 
-spade();
+club();
 </script>
 </body>
 </html>
