@@ -2,7 +2,7 @@
 <html>
 <head>
 <style>
-#c{
+canvas {
 background-color: white;
 height: 400px;
 width: 250px;
@@ -12,24 +12,36 @@ width: 250px;
 <body>
 <canvas id = "c" height="400" width="400">
 </canvas>
+<canvas id = "d" height="400" width="400">
+</canvas>
+<canvas id = "e" height="400" width="400">
+</canvas>
+<canvas id = "f" height="400" width="400">
+</canvas>
 <script>
 var c = document.getElementById("c");
 var canvas = c.getContext("2d");
+var d = document.getElementById("d");
+var danvas = d.getContext("2d");
+var e = document.getElementById("e");
+var eanvas = e.getContext("2d");
+var f = document.getElementById("f");
+var fanvas = f.getContext("2d");
 
-var spade = function(){
-canvas.beginPath();
-canvas.moveTo(0,200);
-canvas.lineTo(200,0);
-canvas.lineTo(400,200);
-canvas.lineTo(300,300);
-canvas.lineTo(200,200);
-canvas.lineTo(100,300);
-canvas.fill();
-canvas.beginPath();
-canvas.moveTo(100,400);
-canvas.lineTo(200,300);
-canvas.lineTo(300,400);
-canvas.fill();
+var spade = function(x){
+x.beginPath();
+x.moveTo(0,200);
+x.lineTo(200,0);
+x.lineTo(400,200);
+x.lineTo(300,300);
+x.lineTo(200,200);
+x.lineTo(100,300);
+x.fill();
+x.beginPath();
+x.moveTo(100,400);
+x.lineTo(200,300);
+x.lineTo(300,400);
+x.fill();
 
 /*
 canvas.lineTo(205,205);
@@ -43,38 +55,41 @@ canvas.fill();
 */
 };
 
-var club = function(){
-spade();
-canvas.strokeStyle = "#FFFFFF";
-canvas.lineWidth = 10;
-canvas.moveTo(0,0);
-canvas.lineTo(400,400);
-canvas.moveTo(400,0);
-canvas.lineTo(0,400);
-canvas.stroke();
+var club = function(y){
+spade(y);
+y.strokeStyle = "#FFFFFF";
+y.lineWidth = 10;
+y.moveTo(0,0);
+y.lineTo(400,400);
+y.moveTo(400,0);
+y.lineTo(0,400);
+y.stroke();
 };
 
-var heart = function(){
-canvas.fillStyle = "#FF0000";
-canvas.moveTo(200,400);
-canvas.lineTo(0,200);
-canvas.lineTo(100,100);
-canvas.lineTo(200,200);
-canvas.lineTo(300,100);
-canvas.lineTo(400,200);
-canvas.fill();
+var heart = function(z){
+z.fillStyle = "#FF0000";
+z.moveTo(200,400);
+z.lineTo(0,200);
+z.lineTo(100,100);
+z.lineTo(200,200);
+z.lineTo(300,100);
+z.lineTo(400,200);
+z.fill();
 };
 
-var diamond = function(){
-canvas.fillStyle = "#FF0000";
-canvas.moveTo(200,0);
-canvas.lineTo(400,200);
-canvas.lineTo(200,400);
-canvas.lineTo(0,200);
-canvas.fill();
+var diamond = function(f){
+f.fillStyle = "#FF0000";
+f.moveTo(200,0);
+f.lineTo(400,200);
+f.lineTo(200,400);
+f.lineTo(0,200);
+f.fill();
 };
 
-diamond();
+diamond(d);
+heart(c);
+club(b);
+spade(a);
 </script>
 </body>
 </html>
